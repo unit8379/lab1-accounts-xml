@@ -1,0 +1,27 @@
+<!ELEMENT accounts (account*)>
+
+<!ELEMENT account (tariff+)>
+<!ATTLIST account
+    firstName CDATA #REQUIRED
+    lastName CDATA #REQUIRED
+>
+
+<!ELEMENT tariff (service*)>
+<!ATTLIST tariff
+    id ID #REQUIRED
+    name CDATA #REQUIRED
+    cost CDATA #REQUIRED
+>
+
+<!ELEMENT service (internet?, telephone?)>
+
+<!ELEMENT internet EMPTY>
+<!ATTLIST internet
+    type CDATA #REQUIRED
+    speed (25|50|75|100|200|300) #REQUIRED
+>
+
+<!ELEMENT telephone EMPTY>
+<!ATTLIST telephone
+    type (IP|LINE) #REQUIRED
+>
